@@ -3,7 +3,7 @@ package com.tapo.auto.controller.login;
 import lombok.Data;
 
 @Data
-public class LoginForm {
+public class LoginUserForm {
     private String name;
-    private Boolean administrator;
+    private String password;
 }

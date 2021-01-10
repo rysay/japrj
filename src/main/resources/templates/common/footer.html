@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- 共通化したいfooterをfragment化する -->
+<div th:fragment="footer_fragment">
+  <link th:href="@{/css/common/footer.css}" rel="stylesheet" type="text/css">
+  <footer id="footer">
+    <form class="logout_botton" th:action="@{/logout}" method="post">
+      <input type="submit" value="ログアウト"/>
+    </form>
+  </footer>
+</div>
+</html>

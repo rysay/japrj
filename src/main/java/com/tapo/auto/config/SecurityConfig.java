@@ -59,22 +59,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        // 認証無しの場合アクセス不許可
         http.authorizeRequests()
+                .antMatchers("/css/**", "/images/**", "/js/**").permitAll()
+                // 認証無しの場合アクセス不許可
                 .anyRequest().authenticated();
         // ログイン制御
         http.formLogin()
-                //.loginProcessingUrl("/signin")//ログイン処理をするURL
-                //.loginPage("/loginForm")//ログイン画面のURL
-                //.failureUrl("/login?error")//認証失敗時のURL
-                .successForwardUrl("/success")//認証成功時のURL
+                .loginProcessingUrl("/signin")//ログイン処理をするURL(今回は未実装)
+                .loginPage("/login").permitAll()//ログイン画面のURL
+                .failureUrl("/login?error")//認証失敗時のURL
                 .usernameParameter("name")//ユーザのパラメータ名
                 .passwordParameter("password")//パスワードのパラメータ名
-                .permitAll();
+                .successForwardUrl("/top")//認証成功時のURL
+                .defaultSuccessUrl("/top")
+                ;
         // ログアウト
         http.logout()
-                .logoutUrl("/logout**")//ログアウト時のURL（今回は未実装）
+                //.logoutUrl("/logout")//ログアウト時のURL(今回は未実装)
                 .logoutSuccessUrl("/login")//ログアウト成功時のURL
-                .permitAll();
+                ;
     }
 }

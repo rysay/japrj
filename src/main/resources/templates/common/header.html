@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- 共通化したいheaderをfragment化する -->
+<div th:fragment="header_fragment(user_info)">
+  <link th:href="@{/css/common/header.css}" rel="stylesheet" type="text/css">
+  <header id="header">
+    <div class="header_title" th:text="ja_project" />
+    <div class="user_info" th:if="${user_info} != null" th:object="${user_info}">
+      ログインユーザ:
+      <span th:text="${user_info.name}"/>
+      <span th:if="${user_info.administrator}" th:text="(管理者)" />
+      <span th:unless="${user_info.administrator}" th:text="(一般)" />
+    </div>
+  </header>
+</div>
+</html>

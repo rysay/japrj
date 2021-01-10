@@ -55,7 +55,7 @@ public class UserDetailsServiceImple implements UserDetailsService {
  
 		return new org.springframework.security.core.userdetails.User(
                 user.getName(),
-                passwordEncoder.encode(user.getPassword()),
+                user.getPassword(),
                 authorityList);
     }
 }

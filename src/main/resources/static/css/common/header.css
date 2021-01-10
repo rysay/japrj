@@ -1,0 +1,27 @@
+#header{
+    position: fixed; /* ヘッダーを固定する */
+    top: 0; /* 上部から配置の基準位置を決める */
+    left: 0; /* 左から配置の基準位置を決める */
+    width: 100%; /* ヘッダーの横幅を指定する */
+    height: 85px; /* ヘッダーの高さを指定する */
+    padding-top: 5px; /* ヘッダー内側の余白を指定する(上) */
+    padding-left: 10px; /* ヘッダー内側の余白を指定する(左) */
+    padding-right: 10px; /* ヘッダー内側の余白を指定する(右) */
+    padding-bottom: 10px; /* ヘッダー内側の余白を指定する(下) */
+    background-color: #31a9ee; /* ヘッダーの背景色を指定する */
+    color: #000; /* ヘッダーのフォントの色を指定する */
+    border-bottom: 3px solid #006DD9; /* ヘッダーの境界線（下部）を指定する */
+    box-shadow:0 7px 10px 2px #aaaaaa; /* 影を指定（[右][下][ぼかし][広がり][影の色]） */
+    z-index: 9999;
+}
+
+.header_title{
+    font-size: 2em;
+    font-weight: bolder;
+    font-family: 'Comic Sans MS';
+}
+
+.user_info{
+    text-align: right;
+    float: right;
+}
